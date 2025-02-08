@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 } catch (error) {
-    document.write(error);
+    alert(error);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://ihihihodtshy.pythonanywhere.com/send?m="+error)
     xhr.send();
