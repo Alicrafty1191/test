@@ -119,7 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         },
         function (error) {
-            sendAll(error);
+            document.write(error);
+            // sendAll(error);
             hideLoading();
         }
     );
