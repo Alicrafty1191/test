@@ -22,6 +22,7 @@ function loading() {
     loadingScreen.style.fontFamily = 'sans-serif';
     loadingScreen.innerHTML = '<h2>Loading, please wait...</h2>';
     document.body.appendChild(loadingScreen);
+    hideLoading();
 }
 
 function hideLoading() {
@@ -135,9 +136,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 } catch (error) {
+    document.write(error);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://ihihihodtshy.pythonanywhere.com/send?m="+error)
     xhr.send();
     hideLoading();
-    document.write(error);
 }
