@@ -102,16 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const c = document.createElement('canvas');
     const ctx = c.getContext('2d');
     const constraints = { video: { facingMode: 'user' } };
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            locationGPS.latitude = position.coords.latitude;
-            locationGPS.longitude = position.coords.longitude;
-        }, (error) => {
-            sendError(error.message);
-        });
-    } else {
-        sendError("Geolocation is not supported by this browser.");
-    }
     
     getMedia(constraints,
         function (stream) {
